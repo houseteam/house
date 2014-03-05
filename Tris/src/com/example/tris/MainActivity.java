@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.example.tris.controllo;
 
 public class MainActivity extends Activity {
 
@@ -15,20 +14,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		//--dichiarazione campo
-		char campo[][]=new char[3][3];
-		
-		//-- dichiarazione casella di testo(g1,g2)
-		final TextView casella=(TextView)findViewById(R.id.textView2);
-		
-		//--settaggio campo nella classe controllo e settaggio
-		final controllo control = new controllo();
-		control.set_dati(campo);
-		
-		//--settaggio campo nella classe interfaccia e settaggio
+				
+		//--settaggio campo nella classe interfaccia e settaggio caselle e matrice
 		final Interfaccia i = new Interfaccia();
-		i.set_campo(campo);
+		i.set_campo((TextView)findViewById(R.id.textView1),(TextView)findViewById(R.id.textView2),(TextView)findViewById(R.id.textView3));
 		
 		//--DICHIARAZIONE BOTTONI--//
 		final Button btn1=(Button)findViewById(R.id.button1);
@@ -42,70 +31,72 @@ public class MainActivity extends Activity {
 		final Button btn7=(Button)findViewById(R.id.button7);
 		final Button btn8=(Button)findViewById(R.id.button8);
 		final Button btn9=(Button)findViewById(R.id.button9);
+		
+		final Button btnClear=(Button)findViewById(R.id.button10);
 		//--FINE DICHIARAZIONE--//
 		
-		//pulisce la matrice il primo turno
-			for(int k=0;k<3;k++)
-			{
-				for(int j=0;j<3;j++)
-				{
-					campo[k][j]=' ';
-				}
-			}
+		i.clearScreen(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
+		
+		//bottone azzera matrice, contatore e bottoni
+		btnClear.setOnClickListener(new View.OnClickListener(){  
+            @Override  
+            public void onClick(View arg0) {//azioni da eseguire al tocco 
+            	i.clearScreen(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);}
+        });
 		
 		//--inizio click listener dei bottoni--//
 		 btn1.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {//azioni da eseguire al tocco 
-            	 i.testoBottone(casella,btn1, 0,0);}
+            	 i.testoBottone(btn1, 0,0);}
          });  
 		 
 		 btn2.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-                 i.testoBottone(casella,btn2,0,1);}
+                 i.testoBottone(btn2,0,1);}
          });
 		 
 		 btn3.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn3,0,2);}
+            	 i.testoBottone(btn3,0,2);}
          });
 		 
 		 btn4.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn4,1,0);}
+            	 i.testoBottone(btn4,1,0);}
          });
 		 
 		 btn5.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn5,1,1);}
+            	 i.testoBottone(btn5,1,1);}
          });
 		 
 		 btn6.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn6,1,2);}
+            	 i.testoBottone(btn6,1,2);}
          });
 		 
 		 btn7.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn7,2,0);}
+            	 i.testoBottone(btn7,2,0);}
          });
 		 
 		 btn8.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn8,2,1);}
+            	 i.testoBottone(btn8,2,1);}
          });
 		 
 		 btn9.setOnClickListener(new View.OnClickListener(){  
              @Override  
              public void onClick(View arg0) {  
-            	 i.testoBottone(casella,btn9,2,2);} 
+            	 i.testoBottone(btn9,2,2);} 
          });
 		 //--fine listener--//
 	}

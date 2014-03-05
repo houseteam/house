@@ -110,4 +110,25 @@
         android:layout_alignLeft="@+id/button5"
         android:text=" " />
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button9"
+        android:layout_marginBottom="32dp"
+        android:text="Pulisci tutto" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button10"
+        android:layout_alignLeft="@+id/button10"
+        android:layout_alignRight="@+id/button10"
+        android:layout_marginBottom="15dp"
+        android:text=" "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>
