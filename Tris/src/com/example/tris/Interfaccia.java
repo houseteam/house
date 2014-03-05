@@ -1,6 +1,5 @@
 package com.example.tris;
 
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.tris.controlli;
@@ -10,13 +9,11 @@ public class Interfaccia {
 	private int i;
 	private char campo[][]=new char[3][3];
 	private TextView casella1;
-	private TextView casella;
 	private TextView log;
 	
-	public void set_campo(TextView cas,TextView ella,TextView plog)
+	public void set_campo(TextView cas,TextView plog)
 	{
 		casella1=cas;
-		casella=ella;
 		log=plog;
 		
 		for(int c=0;c<3;c++)
@@ -38,12 +35,12 @@ public class Interfaccia {
 			{	if(i%2==0)
 				{
 					campo[n1][n2]='X';
-					casella.setText("g2");
+					casella1.setText("E' il turno di X");
 				}
 				else
 				{
 					campo[n1][n2]='O';
-					casella.setText("g1");
+					casella1.setText("E' il turno di O");
 				}
 				i++;
 			}
@@ -78,8 +75,7 @@ public class Interfaccia {
 		btn8.setText(" ");
 		btn9.setText(" ");
 		i=0;
-		casella1.setText("E' il turno del ");
-		casella.setText("g1");
+		casella1.setText("E' il turno di X");
 		log.setText(" ");
 		for(int i=0;i<3;i++)
 		{

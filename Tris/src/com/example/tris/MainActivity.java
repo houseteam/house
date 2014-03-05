@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 				
 		//--settaggio campo nella classe interfaccia e settaggio caselle e matrice
 		final Interfaccia i = new Interfaccia();
-		i.set_campo((TextView)findViewById(R.id.textView1),(TextView)findViewById(R.id.textView2),(TextView)findViewById(R.id.textView3));
+		i.set_campo((TextView)findViewById(R.id.textView1),(TextView)findViewById(R.id.textView3));
 		
 		//--DICHIARAZIONE BOTTONI--//
 		final Button btn1=(Button)findViewById(R.id.button1);
