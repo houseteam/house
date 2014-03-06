@@ -62,7 +62,7 @@ public class Interfaccia {
 			break;
 		case 2:
 			log.setText("Vittoria O");
-			cittorieO++;
+			vittorieO++;
 		}
 			
 	}
