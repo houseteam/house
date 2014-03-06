@@ -6,6 +6,8 @@ import com.example.tris.controlli;
 
 public class Interfaccia {
 
+	private int vittorieX=0;
+	private int vittorieY=0;
 	private int i;
 	private char campo[][]=new char[3][3];
 	private TextView casella1;
@@ -56,9 +58,11 @@ public class Interfaccia {
 		{
 		case 1:
 			log.setText("Vittoria X");
+			vittorieX++;
 			break;
 		case 2:
 			log.setText("Vittoria O");
+			cittorieO++;
 		}
 			
 	}
