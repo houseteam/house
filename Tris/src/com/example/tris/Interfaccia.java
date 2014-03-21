@@ -36,13 +36,13 @@ public class Interfaccia {
 			if(campo[n1][n2]==' ')
 			{	if(i%2==0)
 				{
-					campo[n1][n2]='X';
 					casella1.setText("E' il turno di X");
+					campo[n1][n2]='X';
 				}
 				else
 				{
-					campo[n1][n2]='O';
 					casella1.setText("E' il turno di O");
+					campo[n1][n2]='O';
 				}
 				i++;
 			}
@@ -79,7 +79,6 @@ public class Interfaccia {
 		btn8.setText(" ");
 		btn9.setText(" ");
 		i=0;
-		casella1.setText("E' il turno di X");
 		log.setText(" ");
 		for(int i=0;i<3;i++)
 		{
